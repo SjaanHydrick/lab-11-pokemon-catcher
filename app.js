@@ -41,7 +41,7 @@ nextButton.addEventListener('click', () => {
 });
 
 bagButton.addEventListener('click', () => {
-    location.href = './bag/index.html';
+    location.href = './bag/captured.html';
 });
 
 resetButton.addEventListener('click', () => {

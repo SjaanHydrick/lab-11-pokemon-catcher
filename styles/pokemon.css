@@ -205,3 +205,25 @@ footer {
     font-size: 30pt;
     font-style: italic;
 }
+
+#captured {
+    float: right;
+    margin-right: 120px;
+    margin-top: 30px;
+    width: 250px;
+    color: black;
+    background-color: dimgray;
+    border: solid 1px dimgray;
+    border-radius: 5px;
+}
+
+#encountered {
+    float: right;
+    margin-right: 120px;
+    margin-top: 30px;
+    width: 250px;
+    color: black;
+    background-color: dimgray;
+    border: solid 1px dimgray;
+    border-radius: 5px;
+}
