@@ -4,11 +4,11 @@ import { pokemonArray } from './pokemon.js';
 //const pokemonName = document.querySelectorAll('h2');
 const radios = document.querySelectorAll('input');
 const images = document.querySelectorAll('.pokemans');
+const catchMessage = document.getElementById('catch-message');
 
-const encounteredPokemon = getThreePokemon(pokemonArray);
+//const encounteredPokemon = getThreePokemon(pokemonArray);
 
-let pokemonEncountered = [];
-let pokemonCaught = [];
+const pokemonBag = [];
 
 //retreives 1 pokeman
 export function getRandomPokemon(array) {
@@ -37,48 +37,59 @@ export function pokemonGenerator() {
     let wildPokemon = getThreePokemon(pokemonArray);
 
     for (let i = 0; i < wildPokemon.length; i++) {
-        //pokemonName[i].textContent = wildPokemon[i].pokebase;
         images[i].src = wildPokemon[i].url_image;
-        radios[i].value = wildPokemon[i].id;
-        pokemonEncountered.push(radios[i].value);
+        radios[i].value = wildPokemon[i].pokebase;
 
-        console.log(pokemonEncountered);
+        const actualEncountered = findByID(pokemonBag, radios[i].value, 'identifier');
+
+        if (actualEncountered) {
+            actualEncountered.encountered++;
+        } else {
+            pokemonBag.push({
+                identifier: wildPokemon[i].pokebase,
+                encountered: 1,
+                captured: 0
+            });
+        }
     }
 }
 
-export function findByID(someArray, someId){
-    for (const item of someArray) {
-        if (item.id === someId) {
+export function findByID(someArray, someId, identifier){
+    for (let i = 0; i < someArray.length; i++) {
+        const item = someArray[i];
+        if (item[identifier] === someId) {
             return item;
         }
     }
-
 }
+
+
+    
 
 //on choosing radio button; logs caughtPokemon
 export function chooseRadioButton() {
+
     for (let i = 0; i < radios.length; i++) {
 
         radios[i].addEventListener('change', (e) => {
 
             for (let i = 0; i < radios.length; i++) {
-            
                 radios[i].disabled = true;
                 images[i].style.opacity = .5;
-                
+            }
+            
+            const thrownPokeBall = e.target.value;
+
+            const caughtPokemon = findByID(pokemonBag, thrownPokeBall, 'identifier');
+
+            if (caughtPokemon) {
+                caughtPokemon.captured++;
+            } else {
+                caughtPokemon.captured = 1;
             }
 
-            //display you caught message here
-
-            radios[i].value = encounteredPokemon[i].id;
-
-            const caughtPokemonID = e.target.value;
-
-            const pokemanID = findByID(pokemonArray, caughtPokemonID);
-
-            pokemonCaught.push(pokemanID);
-
-            console.log(pokemanID);
+            console.log(thrownPokeBall);
+            console.log(pokemonBag);
         });
     }
 }

@@ -7,20 +7,19 @@ const newGame = document.getElementById('start');
 const nextButton = document.getElementById('keep-running');
 const bagButton = document.getElementById('bag');
 const resetButton = document.getElementById('reset');
-const catchMessage = document.getElementById('catch-message');
+const bagMessage = document.getElementById('bag-message');
 
 //initialize state
 
 let numberOfTurns = 0;
 
 nextButton.style.visibility = 'hidden';
-catchMessage.style.visibility = 'hidden';
 resetButton.style.visibility = 'hidden';
-bagButton.style.visibility = 'hidden';
+bagButton.style.display = 'none';
 
 newGame.addEventListener('click', () => {
 
-    newGame.style.visibility = 'hidden';
+    newGame.style.display = 'none';
     nextButton.style.visibility = 'visible';
     resetButton.style.visibility = 'visible';
     pokemonGenerator();
@@ -36,8 +35,11 @@ nextButton.addEventListener('click', () => {
     restoreRadioButton();
 
     if (numberOfTurns === 10) {
-        nextButton.style.visibility = 'hidden';
-        bagButton.style.visibility = 'visible';
-        catchMessage.textContent = 'Check your bag to see what you\'ve caught!';
+        nextButton.style.display = 'none';
+        bagButton.style.display = 'inline';
     }
+});
+
+resetButton.addEventListener('click', () => {
+    location.reload();
 });
