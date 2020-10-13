@@ -1,0 +1,92 @@
+body {
+    background-color: #202020;
+}
+
+header {
+    width: 100%;
+    border-bottom: groove 5px black; 
+}
+
+.main-section {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    background-color: gray;
+    
+}
+
+#start {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    width: 100px;
+    color: black;
+    background-color: dimgray;
+    border: solid 1px dimgray;
+    border-radius: 5px;
+
+}
+
+#innerscreen{
+    width: 350px;
+    height: 350px;
+    margin-top: 25px;
+    margin-left: 15px;
+    background-image: url('/Kanto_Route_1_RBYcrop.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: yellowgreen;
+    background-blend-mode: multiply;
+    border: groove 2px yellowgreen;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + img {
+    border: solid 1px black;
+}
+
+#firstbutton {
+    float: right;
+    margin-right: 80px;
+    margin-top: 65px;
+}
+
+#secondbutton {
+    float: left;
+    margin-top: 200px;
+    margin-left: 30px;
+}
+
+#thirdbutton {
+    float: left;
+    margin-top: 120px;
+    margin-left: 35px;
+}
+
+.pokemans {
+    height: 80px;
+}
+
+#catch-message {
+
+}
+
+#keep-running {
+
+}
+
+#bag {
+
+}
+
+#reset {
+
+}
