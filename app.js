@@ -7,7 +7,6 @@ const newGame = document.getElementById('start');
 const nextButton = document.getElementById('keep-running');
 const bagButton = document.getElementById('bag');
 const resetButton = document.getElementById('reset');
-const bagMessage = document.getElementById('bag-message');
 
 //initialize state
 
@@ -31,13 +30,18 @@ chooseRadioButton();
 //numberOfTurns goes up until 10 turns
 nextButton.addEventListener('click', () => {
     numberOfTurns++;
-    pokemonGenerator();
-    restoreRadioButton();
 
-    if (numberOfTurns === 10) {
+    if (numberOfTurns < 10) {
+        pokemonGenerator();
+        restoreRadioButton();
+    } else {
         nextButton.style.display = 'none';
         bagButton.style.display = 'inline';
     }
+});
+
+bagButton.addEventListener('click', () => {
+    location.href = './bag/index.html';
 });
 
 resetButton.addEventListener('click', () => {

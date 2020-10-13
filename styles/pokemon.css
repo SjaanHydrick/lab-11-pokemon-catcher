@@ -35,7 +35,17 @@ header {
     background-color: dimgray;
     border: solid 1px dimgray;
     border-radius: 5px;
+}
 
+#home {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    width: 100px;
+    color: black;
+    background-color: dimgray;
+    border: solid 1px dimgray;
+    border-radius: 5px;
 }
 
 #innerscreen{
@@ -48,6 +58,15 @@ header {
     background-repeat: no-repeat;
     background-color: yellowgreen;
     background-blend-mode: multiply;
+    border: groove 2px yellowgreen;
+}
+
+#innerscreen-bag{
+    width: 350px;
+    height: 350px;
+    margin-top: 25px;
+    margin-left: 15px;
+    background-color: yellowgreen;
     border: groove 2px yellowgreen;
 }
 
@@ -75,13 +94,25 @@ header {
     color: white;
 }
 
+#pokeball-sprite {
+    height: 15px;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+.pokeball {
+    height: 15px;
+}
 
 input[type="radio"] {
     display: none;
 }
 
 input[type="radio"]:checked + img {
-    border: solid 1px black;
+    /* z-index: 1;
+    position: relative;
+    background-image: url("../PokeBall2.png"); */
+    background-size: 70px;
 }
 
 #firstbutton {
@@ -106,9 +137,19 @@ input[type="radio"]:checked + img {
     height: 70px;
 }
 
+
 #catch-message {
+    display: none;
     position: absolute;
+    padding: 3px;
+    height: 45px;
+    margin-left: 17px;
+    margin-top: -57px;
+    width: 340px;
     font-family: Nintendo;
+    font-size: 11pt;
+    background-color: yellowgreen;
+    border: groove 3px yellowgreen;
 }
 
 #bag-message {

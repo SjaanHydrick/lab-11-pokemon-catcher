@@ -5,8 +5,9 @@ import { pokemonArray } from './pokemon.js';
 const radios = document.querySelectorAll('input');
 const images = document.querySelectorAll('.pokemans');
 const catchMessage = document.getElementById('catch-message');
+//const pokeballs = document.querySelectorAll('.pokeball');
 
-//const encounteredPokemon = getThreePokemon(pokemonArray);
+const POKEARRAY = 'POKEARRAY';
 
 const pokemonBag = [];
 
@@ -61,10 +62,7 @@ export function findByID(someArray, someId, identifier){
             return item;
         }
     }
-}
-
-
-    
+}    
 
 //on choosing radio button; logs caughtPokemon
 export function chooseRadioButton() {
@@ -75,10 +73,13 @@ export function chooseRadioButton() {
 
             for (let i = 0; i < radios.length; i++) {
                 radios[i].disabled = true;
-                images[i].style.opacity = .5;
             }
             
             const thrownPokeBall = e.target.value;
+
+            if (thrownPokeBall) {
+                images[i].src = './PokeBall2.png';
+            }
 
             const caughtPokemon = findByID(pokemonBag, thrownPokeBall, 'identifier');
 
@@ -87,17 +88,30 @@ export function chooseRadioButton() {
             } else {
                 caughtPokemon.captured = 1;
             }
+            catchMessage.style.display = 'inline';
+            catchMessage.textContent = `You caught a ${caughtPokemon.identifier}!`;
 
-            console.log(thrownPokeBall);
-            console.log(pokemonBag);
+            setInLocalStorage(POKEARRAY, pokemonBag);
         });
     }
 }
 
+//restores Radio Buttons back to normal
 export function restoreRadioButton(){
+    catchMessage.style.display = 'none';
     for (let i = 0; i < radios.length; i++) {
         radios[i].disabled = false;
         radios[i].checked = false;
         images[i].style.opacity = 1;
     }
 }
+
+
+export function setInLocalStorage(key, value) {
+    const stringyItem = JSON.stringify(value);
+
+    localStorage.setItem(key, stringyItem);
+
+    return value;
+}
+
