@@ -15,8 +15,8 @@ const catchMessage = document.getElementById('catch-message');
 //initialize state
 
 let numberOfTurns = 0;
-let pokemonCaught = 0;
-let pokemonEncountered = 0;
+let pokemonCaught = [];
+let pokemonEncountered = [];
 
 const encounteredPokemon = getThreePokemon(pokemonArray);
 
@@ -25,7 +25,12 @@ function pokemonGenerator() {
         pokemonName[i].textContent = encounteredPokemon[i].pokebase;
         images[i].src = encounteredPokemon[i].url_image;
         radios[i].value = encounteredPokemon[i].id;
+        pokemonEncountered.push(radios[i].value);
+
+        console.log(pokemonEncountered);
     }
+
+   
 }
 
 // new button: begins game.
@@ -35,8 +40,10 @@ newGame.addEventListener('click', () => {
     pokemonGenerator();
 });
 
-// choose pokemon, pokemonCaught goes up, pokemonEncountered goes up, numberOfTurns goes up
+// catch pokemon, add to pokemonCaught, add to pokemonEncountered
 
+
+//numberOfTurns goes up until 10 turns
 nextButton.addEventListener('click', () => {
     numberOfTurns++;
 
