@@ -17,3 +17,4 @@ export function getThreePokemon(array) {
     }
     return threeArray;
 }
+

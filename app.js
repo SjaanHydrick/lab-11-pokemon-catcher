@@ -29,24 +29,48 @@ function pokemonGenerator() {
 
         console.log(pokemonEncountered);
     }
-
-   
 }
 
 // new button: begins game.
 // when game begins: three random pokemon displayed for each radio button.
 newGame.addEventListener('click', () => {
+
     newGame.style.visibility = 'hidden';
     pokemonGenerator();
+
 });
 
 // catch pokemon, add to pokemonCaught, add to pokemonEncountered
+function chooseRadioButton() {
+    for (let i = 0; i < radios.length; i++) {
 
+        radios[i].addEventListener('change', (e) => {
+
+            for (let i = 0; i < radios.length; i++) {
+                radios[i].disabled = true;
+                images[i].style.opacity = .5;
+            }
+
+            //display message here
+
+            const caughtPokemon = e.target.value === encounteredPokemon.id;
+            pokemonCaught.push(caughtPokemon);
+        });
+    }
+}
+
+chooseRadioButton();
 
 //numberOfTurns goes up until 10 turns
 nextButton.addEventListener('click', () => {
     numberOfTurns++;
+    pokemonGenerator();
 
+    for (let i = 0; i < radios.length; i++) {
+        radios[i].disabled = false;
+        radios[i].checked = false;
+        images[i].style.opacity = 1;
+    }
 
     if (numberOfTurns === 10) {
         nextButton.style.visibility = 'hidden';
