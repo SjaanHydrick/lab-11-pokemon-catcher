@@ -8,6 +8,11 @@ homeButton.addEventListener('click', () => {
     location.href = '../index.html';
 });
 
+Chart.defaults.global.defaultFontFamily = 'Nintendo';
+Chart.defaults.global.defaultFontColor = '#202020'
+;
+Chart.defaults.global.defaultFontSize = 8;
+
 const pokemonStorageArray = JSON.parse(localPokemon);
 
 const pokemonEncounteredAmount = pokemonStorageArray.map(cartItem => cartItem.encountered);
