@@ -8,6 +8,7 @@ const nextButton = document.getElementById('keep-running');
 const bagButton = document.getElementById('bag');
 const resetButton = document.getElementById('reset');
 
+
 //initialize state
 
 let numberOfTurns = 0;
@@ -25,7 +26,7 @@ newGame.addEventListener('click', () => {
 
 });
 
-chooseRadioButton();
+chooseRadioButton(nextButton);
 
 //numberOfTurns goes up until 10 turns
 nextButton.addEventListener('click', () => {
@@ -33,7 +34,7 @@ nextButton.addEventListener('click', () => {
 
     if (numberOfTurns < 10) {
         pokemonGenerator();
-        restoreRadioButton();
+        restoreRadioButton(nextButton);
     } else {
         nextButton.style.display = 'none';
         bagButton.style.display = 'inline';

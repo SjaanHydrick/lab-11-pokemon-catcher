@@ -5,7 +5,7 @@ import { pokemonArray } from './pokemon.js';
 const radios = document.querySelectorAll('input');
 const images = document.querySelectorAll('.pokemans');
 const catchMessage = document.getElementById('catch-message');
-//const pokeballs = document.querySelectorAll('.pokeball');
+const catchPokemon = document.querySelector(':checked');
 
 const POKEARRAY = 'POKEARRAY';
 
@@ -65,11 +65,19 @@ export function findByID(someArray, someId, identifier){
 }    
 
 //on choosing radio button; logs caughtPokemon
-export function chooseRadioButton() {
+export function chooseRadioButton(nextButtonElement) {
+    // const catchPokemon = document.querySelector(':checked');
+    
+    if (!catchPokemon) {
+        nextButtonElement.disabled = true;
+    }
+
 
     for (let i = 0; i < radios.length; i++) {
 
         radios[i].addEventListener('change', (e) => {
+
+            nextButtonElement.disabled = false;
 
             for (let i = 0; i < radios.length; i++) {
                 radios[i].disabled = true;
@@ -97,7 +105,12 @@ export function chooseRadioButton() {
 }
 
 //restores Radio Buttons back to normal
-export function restoreRadioButton(){
+export function restoreRadioButton(nextButtonElement){
+    
+    if (!catchPokemon) {
+        nextButtonElement.disabled = true;
+    }
+
     catchMessage.style.display = 'none';
     for (let i = 0; i < radios.length; i++) {
         radios[i].disabled = false;
