@@ -56,9 +56,9 @@ header {
     background-image: url('../Kanto_Route_1_RBYcrop.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: yellowgreen;
+    background-color: #D5EAAB;
     background-blend-mode: multiply;
-    border: groove 2px yellowgreen;
+    border: groove 2px #D5EAAB;
 }
 
 #innerscreen-bag{
@@ -66,8 +66,8 @@ header {
     height: 350px;
     margin-top: 25px;
     margin-left: 15px;
-    background-color: yellowgreen;
-    border: groove 2px yellowgreen;
+    background-color: #D5EAAB;
+    border: groove 2px #D5EAAB;
 }
 
 #battery-light {
@@ -109,9 +109,6 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked + img {
-    /* z-index: 1;
-    position: relative;
-    background-image: url("../PokeBall2.png"); */
     background-size: 70px;
 }
 
@@ -148,8 +145,8 @@ input[type="radio"]:checked + img {
     width: 340px;
     font-family: Nintendo;
     font-size: 11pt;
-    background-color: yellowgreen;
-    border: groove 3px yellowgreen;
+    background-color: #D5EAAB;
+    border: groove 3px #D5EAAB;
 }
 
 #bag-message {

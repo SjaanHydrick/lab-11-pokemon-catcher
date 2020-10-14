@@ -6,6 +6,8 @@ const radios = document.querySelectorAll('input');
 const images = document.querySelectorAll('.pokemans');
 const catchMessage = document.getElementById('catch-message');
 const catchPokemon = document.querySelector(':checked');
+//personal stretch
+const pokeBall = document.getElementById('pokeball-sprite');
 
 const POKEARRAY = 'POKEARRAY';
 
@@ -95,6 +97,8 @@ export function chooseRadioButton(nextButtonElement) {
             } else {
                 caughtPokemon.captured = 1;
             }
+            //personal stretch
+            pokeBall.innerHTML += "<img src='./pokeballSpriteResize.png' />";
             catchMessage.style.display = 'inline';
             catchMessage.textContent = `You caught a ${caughtPokemon.identifier}!`;
 
