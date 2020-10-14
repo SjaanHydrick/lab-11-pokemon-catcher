@@ -100,10 +100,6 @@ header {
     margin-right: 45px;
 }
 
-.pokeball {
-    height: 15px;
-}
-
 input[type="radio"] {
     display: none;
 }
@@ -114,19 +110,19 @@ input[type="radio"]:checked + img {
 
 #firstbutton {
     float: right;
-    margin-right: 75px;
+    margin-right: 80px;
     margin-top: 65px;
 }
 
 #secondbutton {
     float: left;
-    margin-top: 200px;
+    margin-top: 185px;
     margin-left: 40px;
 }
 
 #thirdbutton {
     float: left;
-    margin-top: 50px;
+    margin-top: 45px;
     margin-left: 90px;
 }
 
