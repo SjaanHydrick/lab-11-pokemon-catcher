@@ -1,5 +1,5 @@
 //import { pokemonArray } from './pokemon.js';
-import { pokemonGenerator, chooseRadioButton, restoreRadioButton } from './utils.js';
+import { pokemonGenerator, chooseRadioButton, restoreRadioButton, updateTextContent } from './utils.js';
 
 //import functions and grab DOM elements
 
@@ -38,6 +38,7 @@ nextButton.addEventListener('click', () => {
     } else {
         nextButton.style.display = 'none';
         bagButton.style.display = 'inline';
+        updateTextContent();
     }
 });
 
