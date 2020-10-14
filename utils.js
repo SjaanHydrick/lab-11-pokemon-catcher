@@ -66,7 +66,6 @@ export function findByID(someArray, someId, identifier){
 
 //on choosing radio button; logs caughtPokemon
 export function chooseRadioButton(nextButtonElement) {
-    // const catchPokemon = document.querySelector(':checked');
     
     if (!catchPokemon) {
         nextButtonElement.disabled = true;
@@ -126,5 +125,10 @@ export function setInLocalStorage(key, value) {
     localStorage.setItem(key, stringyItem);
 
     return value;
+}
+
+export function updateTextContent() {
+    catchMessage.textContent = 'Out of PokeBalls!';
+    
 }
 
