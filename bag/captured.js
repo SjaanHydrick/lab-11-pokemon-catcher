@@ -11,8 +11,7 @@ homeButton.addEventListener('click', () => {
 });
 
 Chart.defaults.global.defaultFontFamily = 'Nintendo';
-Chart.defaults.global.defaultFontColor = '#202020'
-;
+Chart.defaults.global.defaultFontColor = '#202020';
 Chart.defaults.global.defaultFontSize = 8;
 
 
