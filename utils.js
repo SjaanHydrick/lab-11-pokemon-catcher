@@ -87,7 +87,7 @@ export function chooseRadioButton(nextButtonElement) {
             const thrownPokeBall = e.target.value;
 
             if (thrownPokeBall) {
-                images[i].src = './PokeBall2.png';
+                images[i].src = './images/PokeBall2.png';
             }
 
             const caughtPokemon = findByID(pokemonBag, thrownPokeBall, 'identifier');
@@ -98,7 +98,7 @@ export function chooseRadioButton(nextButtonElement) {
                 caughtPokemon.captured = 1;
             }
             //personal stretch
-            pokeBall.innerHTML += "<img src='./pokeballSpriteResize.png' />";
+            pokeBall.innerHTML += "<img src='./images/pokeballSpriteResize.png' />";
             catchMessage.style.display = 'inline';
             catchMessage.textContent = `You caught a ${caughtPokemon.identifier}!`;
 

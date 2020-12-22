@@ -1,6 +1,6 @@
 @font-face {
     font-family: Nintendo;
-    src: url('../Early\ GameBoy.ttf')
+    src: url('../fonts/Early\ GameBoy.ttf')
 }
 
 body {
@@ -53,7 +53,7 @@ header {
     height: 350px;
     margin-top: 25px;
     margin-left: 15px;
-    background-image: url('../Kanto_Route_1_RBYcrop.png');
+    background-image: url('../images/Kanto_Route_1_RBYcrop.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #D5EAAB;

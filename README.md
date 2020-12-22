@@ -1,1 +1,2 @@
-# lab-11-pokemon-catcher
+# Lab 11: Pokemon Catcher
+
